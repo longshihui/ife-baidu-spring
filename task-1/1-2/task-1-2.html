@@ -12,9 +12,9 @@
         }
         body > header {
             background-color: rgb(51,51,51);
-            width: 100%;
             height: 60px;
             line-height: 60px;
+            padding: 0 20px;
         }
 
         body > header h1 {
@@ -29,19 +29,31 @@
             clear: both;
         }
 
+        body > header > .logo {
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+            color: aqua;
+        }
+
         body > header > nav{
             float: right;
         }
 
         body > header > nav > ul{
-            list-style-position: inside;
+            list-style: none;
             padding: 0;
             margin: 0;
         }
 
         body > header > nav > ul > li{
             float: left;
-            margin-right: 5px;
+            padding: 0 1em;
+        }
+
+        body > header > nav > ul > li:hover {
+            border-bottom: 2px solid red;
+            background-color: rgb(75,75,75);
         }
 
         body > header > nav a{
@@ -197,7 +209,7 @@
 </head>
 <body>
 <header>
-    <h1>网站一级标题</h1>
+    <h1 class="logo">IFE</h1>
     <nav>
         <ul>
             <li>
