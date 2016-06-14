@@ -10,18 +10,19 @@
             background-color: rgb(222,222,222);
             font-family: "Microsoft YaHei UI",monospace;
         }
-        body > header {
+
+        .public-header {
             background-color: rgb(51,51,51);
             height: 60px;
             line-height: 60px;
             padding: 0 20px;
         }
 
-        body > header h1 {
+        .public-header h1 {
             float: left;
         }
 
-        body > header:after{
+        .public-header:after{
             display: block;
             visibility: visible;
             content: '';
@@ -29,35 +30,35 @@
             clear: both;
         }
 
-        body > header > .logo {
+        .public-header > .logo {
             margin: 0;
             padding: 0;
             display: inline-block;
             color: aqua;
         }
 
-        body > header > nav{
+        .public-header > nav{
             float: right;
         }
 
-        body > header > nav > ul{
+        .public-header > nav > ul{
             list-style: none;
             padding: 0;
             margin: 0;
         }
 
-        body > header > nav > ul > li{
+        .public-header > nav > ul > li{
             float: left;
             padding: 0 1em;
         }
 
-        body > header > nav > ul > li:hover {
+        .public-header > nav > ul > li:hover {
             border-bottom: 2px solid red;
             background-color: rgb(75,75,75);
             cursor: pointer;
         }
 
-        body > header > nav a{
+        .public-header > nav a{
             text-decoration: none;
             color: rgb(255,255,255);
             font-size: 14px;
@@ -109,6 +110,7 @@
             max-width: 100%;
         }
 
+        /*表格组件*/
         table{
             width: 100%;
             border: 1px solid rgb(204,204,204);
@@ -134,6 +136,7 @@
             font-weight: 700;
         }
 
+        /*侧边栏*/
         aside{
             margin-right: 40px;
         }
@@ -145,6 +148,7 @@
             padding: 12px 10px;
         }
 
+        /*表单组件*/
         .form textarea{
             width: 60%;
         }
@@ -167,14 +171,15 @@
         }
 
         .form .form-group > .form-info{
-            margin-left: 30%;
             margin-top: 0;
+            padding-left: calc(30% + 12px);
             color: rgb(152,152,152);
             width: 100%;
             box-sizing: border-box;
-            padding-left: 12px;
             float: left;
         }
+
+        /*按钮组件*/
 
         .btn-blue {
             background-color: rgb(51,85,208);
@@ -186,8 +191,8 @@
         }
 
         .btn-block{
-            -webkit-border-radius: 5px;
-            -moz-border-radius: 5px;
+             -webkit-border-radius: 5px;
+             -moz-border-radius: 5px;
             border-radius: 5px;
             border: none;
             display: block;
@@ -197,12 +202,14 @@
             font-weight: 700;
         }
 
+        /*输入框组件*/
         .input-group > label{
             margin-right: 1rem;
             float: left;
         }
 
-        footer {
+        /*页脚*/
+        .public-footer {
             height: 70px;
             background-color: rgb(0,0,0);
             color: rgb(234,234,234);
@@ -212,7 +219,7 @@
     </style>
 </head>
 <body>
-<header>
+<header class="public-header">
     <h1 class="logo">IFE-Baidu</h1>
     <nav>
         <ul>
@@ -430,7 +437,7 @@
         </form>
     </aside>
 </main>
-<footer>
+<footer class="public-footer">
     版权所有©
 </footer>
 </body>
