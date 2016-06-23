@@ -1,0 +1,398 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: gray;
+}
+
+.container {
+    width: 892px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 0 44px;
+    zoom: 1;
+    overflow: hidden;
+}
+
+.wrapper{
+    overflow: hidden;
+    zoom: 1;
+}
+
+.col {
+    float: left;
+}
+
+.col-3{
+    float: left;
+    width: 30%;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.header {
+    height: 60px;
+    border-bottom: 2px solid #938e8c;
+    overflow: hidden;
+    font-family: 黑体;
+    font-size: 12px;
+    line-height: 1.17;
+    margin-bottom: 35px;
+}
+
+.header .brand{
+    width: 110px;
+    line-height: 60px;
+    float: left;
+    background-color: rgb(212, 93, 92);
+    color: rgb(255,255,255);
+}
+
+.header .timer {
+    float: right;
+    color: rgb(212, 93, 92);
+    line-height: 60px;
+}
+
+.footer {
+    border-top: 1px solid #938e8c;
+    height: 60px;
+}
+
+.footer .timer{
+    line-height: 60px;
+    float: right;
+    font-family: 黑体;
+    font-size: 12px;
+    color: #d45d5c;
+}
+
+.img-response {
+    max-width: 100%;
+}
+
+.article-1 .banner {
+    width: 640px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    zoom: 1;
+}
+
+.article-1 .banner:before, .article-1 .banner:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 191px;
+    height: 301px;
+}
+
+.article-1 .banner:before {
+    left: 0;
+    background-color: rgba(117, 184, 107, 0.5);
+}
+
+.article-1 .banner:after{
+    right: 0;
+    background-color: rgba(229, 186, 191, 0.5);
+}
+
+.article-1 .banner .banner-list{
+    padding: 0;
+    margin: 0;
+}
+
+.article-1 .banner .banner-list > .banner-list-item{
+    float: left;
+}
+
+.introduction > h3 {
+    font-family: 微软雅黑;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.introduction > p{
+    font-family: 宋体;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #767777;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.introduction.What> h3{
+    color: #418c59;
+}
+
+.introduction.When > h3{
+    color: #d2994f;
+}
+
+.introduction.How > h3{
+    color: #cc7680;
+}
+
+.introduction.How .list{
+    font-family: 微软雅黑;
+    color: #231815;
+    opacity: .7;
+}
+
+.introduction.How .list .percent{
+    font-style: oblique;
+    color: #cd4a48;
+    opacity: .7;
+}
+
+.article-1 .aside {
+    width: 203px;
+    border-top: 2px solid #cc8091;
+    float: right;
+}
+
+.article-1 .aside p {
+    font-family: 微软雅黑;
+    margin: 10px 0;
+
+}
+
+.article-1 .aside .title{
+    font-size: 24px;
+    font-weight: 400;
+    font-variant: small-caps;
+    color: #000;
+    text-decoration: underline;
+    margin: 10px 0;
+}
+
+.article-1 .aside .about {
+    font-family: 楷体;
+    font-size: 12px;
+    font-style: oblique;
+    color: #676767;
+}
+
+.article-1 .aside .number{
+    font-size: 116px;
+    font-weight: 400;
+    font-style: oblique;
+    color: #75b86b;
+}
+
+.article-1 .aside .mix {
+    color: #cc8091;
+}
+
+.article-1 .aside .mix > .left{
+    font-size: 55px;
+}
+
+.article-1 .aside .mix > .right{
+    display: inline-block;
+    vertical-align: text-bottom;
+}
+
+.article-1 .aside .mix > .right > .big{
+    font-size: 21px;
+}
+
+.article-1 .aside .mix > .right > .small{
+    font-size: 12px;
+}
+
+.article-2 section {
+    margin-bottom: 30px;
+}
+
+.article-2 h1,h2 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-family: 黑体;
+    font-weight: bold;
+    color: #11456b;
+}
+.article-2 h1{
+    font-size: 42px;
+}
+
+.article-2 h1 > .first-word{
+    font-size: 72px;
+    font-style: oblique;
+    color: #f5e327;
+}
+
+.article-2 h2 {
+    font-size: 33px;
+}
+
+.article-2 header {
+    margin-bottom: 16px;
+    border-bottom: 2px solid #11456b;
+}
+
+.article-2 .left p {
+    font-family: 微软雅黑;
+    font-size: 12px;
+    color: #767777;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.article-2 .left .second-p{
+    text-indent: 2em;
+}
+
+.article-2 .left .first-letter{
+    font-size: 70px;
+    color: #f5e327;
+    float: left;
+}
+
+.article-2 .left figure {
+    padding: 20px 0 20px 20px;
+    float: right;
+    margin: 0;
+}
+
+.article-2 .right .banner {
+    background: url(../../images/task-1/task-1-6/task_1_6_1_02.png) no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 275px;
+    width: 458px;
+}
+
+.article-2 .right .banner > .cover {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 8px 36px;
+    width: 100%;
+    background-color: rgba(40,40,40, 0.4);
+    font-family: 微软雅黑;
+}
+
+.article-2 .right .banner > .cover > h1{
+    line-height: 44px;
+    display: inline-block;
+    margin: 0;
+    padding:0 10px;
+    font-size: 26px;
+    color: #ffffff;
+    border-left: 3px solid #72b16a;
+}
+
+.article-2 .right .banner > .cover > span {
+    font-size: 12px;
+    font-style: oblique;
+    color: #72b16a;
+    line-height: 1;
+}
+
+.article-2 .right .detail {
+    height: 318px;
+    width: 459px;
+    background-color: rgb(238, 237, 214);
+}
+
+.article-2 .right .detail .top {
+    font-family: 宋体;
+    color: #5a5b5b;
+}
+
+.article-2 .right .detail .top ul {
+    list-style: url(../../images/task-1/task-1-6/task_1_6_1_04.png);
+    margin: 0;
+    padding: 1em;
+}
+
+.article-2 .right .detail .top li {
+    margin:20px;
+    font-size: 16px;
+    text-align: left;
+}
+
+.article-2 .right .detail .top .special{
+    font-size: 12px;
+    font-style: oblique;
+    text-align: right;
+}
+
+.article-2 .right .detail .bottom .left{
+    float: left;
+    width: 260px;
+    height: 160px;
+    background-color: rgb(212, 93 ,92);
+    color: #ffffff;
+}
+
+.article-2 .right .detail .bottom .left > .number{
+    font-family: 微软雅黑;
+    font-size: 110px;
+    vertical-align: middle;
+}
+
+.article-2 .right .detail .bottom .left > .sep{
+    display: inline-block;
+    height: 86px;
+    width: 2px;
+    background-color: #ffffff;
+    vertical-align: middle;
+}
+
+.article-2 .right .detail .bottom .left .content {
+    display: inline-block;
+    width: 160px;
+    vertical-align: middle;
+}
+
+.article-2 .right .detail .bottom .left .content-header{
+    font-family: 黑体;
+    font-size: 21px;
+    font-style: oblique;
+}
+
+.article-2 .right .detail .bottom .left .content-sub{
+    font-family: 黑体;
+    font-size: 12px;
+}
+
+.article-2 .right .detail .bottom .right{
+    font-family: 黑体;
+    padding: 0 15px;
+    font-size: 14px;
+    font-style: oblique;
+    color: #5a5b5b;
+}
+
+.article-2 .right .detail .bottom .right > p{
+    position: relative;
+    text-indent: 30px;
+}
+
+.article-2 .right .detail .bottom .right .special{
+    font-size: 72px;
+    font-style: normal;
+    color: #d45d5c;
+}
+
+.article-2 .right .detail .bottom .right .special.first{
+    position: absolute;
+    top: -15px;
+    left: -70px;
+}
+
+.article-2 .right .detail .bottom .right .special.last{
+    position: absolute;
+    bottom: -66px;
+    right: -36px;
+}
+
+
+
+
+
