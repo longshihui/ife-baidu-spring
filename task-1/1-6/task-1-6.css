@@ -92,11 +92,14 @@ body {
 .article-1 .banner:before {
     left: 0;
     background-color: rgba(117, 184, 107, 0.5);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f75B86B,endColorstr=#7f75B86B)
 }
 
 .article-1 .banner:after{
     right: 0;
     background-color: rgba(229, 186, 191, 0.5);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7fE5BABF,endColorstr=#7fE5BABF)
+
 }
 
 .article-1 .banner .banner-list{
@@ -260,6 +263,7 @@ body {
 
 .article-2 .right .banner {
     background: url(../../images/task-1/task-1-6/task_1_6_1_02.png) no-repeat;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/task-1/task-1-6/task_1_6_1_02.png',sizingMethod=scale);
     background-size: cover;
     position: relative;
     height: 275px;
@@ -273,6 +277,7 @@ body {
     padding: 8px 36px;
     width: 100%;
     background-color: rgba(40,40,40, 0.4);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000,endColorstr=#66000000);
     font-family: 微软雅黑;
 }
 
