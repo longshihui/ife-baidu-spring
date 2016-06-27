@@ -262,7 +262,7 @@ body {
 }
 
 .article-2 .right .banner {
-    background: url(../../images/task-1/task-1-6/task_1_6_1_02.png) no-repeat;
+    background: url(../../images/task-6/task_1_6_1_02.png) no-repeat;
     filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/task-1/task-1-6/task_1_6_1_02.png',sizingMethod=scale);
     background-size: cover;
     position: relative;
@@ -310,7 +310,7 @@ body {
 }
 
 .article-2 .right .detail .top ul {
-    list-style: url(../../images/task-1/task-1-6/task_1_6_1_04.png);
+    list-style: url(../../images/task-6/task_1_6_1_04.png);
     margin: 0;
     padding: 1em;
 }
