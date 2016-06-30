@@ -1,64 +1,4 @@
-* {
-    padding: 0;
-    margin: 0;
-}
 
-a {
-    text-decoration: none;
-}
-
-.container {
-    min-width: 1280px;
-    box-sizing: border-box;
-    overflow: hidden;
-    *zoom: 1;
-}
-
-.row {
-    overflow: hidden;
-    *zoom: 1;
-}
-
-.row:after {
-    content: '';
-    display: block;
-    clear: both;
-}
-
-.btn {
-    display: inline-block;
-    background-color: #ffffff;
-    border: 2px solid rgb(212, 93, 92);
-    padding: .3em 1.5em;
-    text-decoration: none;
-    line-height: 1.5;
-    color: rgb(212, 93, 92);
-    text-align: center;
-    cursor: pointer;
-    transition: all .5s;
-}
-
-.btn:hover {
-    color: #ffffff;
-    background-color: rgb(212, 93, 92);
-}
-
-.btn.red {
-    color: #ffffff;
-    background-color: rgb(212, 93, 92);
-}
-
-.btn.red:hover {
-    background-color: #ffffff;
-    color: rgb(212, 93, 92);
-}
-
-.sep{
-    margin: 0 auto;
-    width: 30px;
-    height: 2px;
-    background: #ffffff;
-}
 
 /* Header部分 */
 .header {
@@ -129,12 +69,10 @@ a {
     color: rgb(212, 93, 92);
 }
 
-/* banner-1 */
-
 .main-banner {
     background: url("../../images/task-7/bg1.png") no-repeat;
     background-size: cover;
-    -ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=../../images/ task-7/bg1.png, sizingMethod=scale);
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/task-7/bg1.png', sizingMethod=scale);
     font-family: 微软雅黑;
     color: #ffffff;
 }
@@ -142,7 +80,7 @@ a {
 .main-banner > .cover {
     padding: 200px 60px;
     background-color: rgba(0, 0, 0, 0.2);
-    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=#33000000,endColorStr=#33000000);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=#33000000,endColorStr=#33000000);
 }
 
 .main-banner .headers {
@@ -202,28 +140,18 @@ a {
     padding-bottom: 150px;
 }
 
-.volunteer .headers{
+.volunteer .title{
     margin: 100px auto;
     width: 33.3%;
-    font-family: 微软雅黑;
     color: #000000;
-    text-align: center;
-}
-
-.volunteer .headers .h1{
-    font-size: 21px;
-    margin: 10px;
 }
 
 .volunteer .sep{
-    margin-top: 10px;
     margin-bottom: 20px;
     background-color: #D45D5C;
 }
 
-.volunteer .headers .h3{
-    font-size: 12px;
-    margin: 10px 0;
+.volunteer .title > .detail{
     color: rgb(170, 170, 170);
 }
 
@@ -232,18 +160,18 @@ a {
     padding-left:140px;
 }
 
-.volunteer .info .row{
+.volunteer .info li{
     overflow: visible;
     float: left;
     width: 100%;
     margin: 20px 0;
 }
 
-.volunteer .info .row.first{
+.volunteer .info .first{
     margin-top: 0;
 }
 
-.volunteer .info .row.last{
+.volunteer .info .last{
     margin: 0;
 }
 
@@ -269,59 +197,30 @@ a {
     text-align: right;
 }
 
-.volunteer .form-content{
+.volunteer form{
     padding-left: 75px;
     padding-right: 120px;
 }
 
-.volunteer .form-content .form-table{
-    width: 100%;
-}
 
-
-.volunteer .form-table td{
+.volunteer .table td{
     padding-right: 15px;
     padding-bottom: 15px;
 }
 
-.volunteer input, .volunteer textarea, .volunteer .btn{
+.volunteer input,.volunteer textarea{
     background-color: #ededee;
-    font-family: 宋体;
-    font-size: 12px;
     color: #231815;
-    border: none;
-    padding: 15px 18px;
-    box-sizing: border-box;
 }
 
-.volunteer input{
-    width: 100%;
-    height: 40px;
-}
-
-.volunteer textarea{
-    width: 100%;
-    resize: none;
-}
-
-.volunteer .btn {
-    display: block;
+.volunteer button {
     font-family: 黑体;
     font-size: 14px;
     width: 100%;
-}
-
-.volunteer .btn:hover{
-    border: none;
+    height: 40px;
     background-color: #ededee;
     color: #231815;
-}
-
-.footer {
-    font-family: 宋体;
-    font-size: 12px;
-    background: #2f2f38;
-    color: #ffffff;
+    border-color: #ededee;
 }
 
 .contact{
@@ -336,48 +235,8 @@ a {
     text-align: center;
 }
 
-.contact .h1 {
-    font-family: 黑体;
-    font-size: 21px;
-    margin: 10px;
-}
-
-.contact p{
-    font-family: 宋体;
-    font-size: 12px;
-    line-height: 18px;
-    margin: 10px 0;
-}
-
 .contact .form{
     margin: 30px 0;
-}
-
-.contact .form .input-btn{
-    position: relative;
-}
-
-.contact .input-btn input{
-    font-family: 微软雅黑;
-    font-size: 14px;
-    padding: 10px 80px 10px 10px;
-    width: 100%;
-    height: 40px;
-    box-sizing: border-box;
-    color: #aaaaaa;
-}
-
-.contact .input-btn button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 80px;
-    height: 40px;
-    background-color: #6f7178;
-    font-family: 微软雅黑;
-    font-size: 15px;
-    color: #ffffff;
-    border: none;
 }
 
 .contact .icons{
@@ -388,13 +247,16 @@ a {
     margin-right: 25px;
 }
 
-.footer .left,.footer .right {
-    line-height: 23px;
+.footer{
+    font-family: 宋体;
+    font-size: 12px;
+    background: #2f2f38;
+    color: #ffffff;
+    padding: 30px 40px 15px 95px;
 }
 
-.footer{
-    padding: 30px 40px 15px 95px;
-    overflow: hidden;
+.footer .left,.footer .right {
+    line-height: 23px;
 }
 
 .footer .left{

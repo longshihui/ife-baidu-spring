@@ -1,0 +1,290 @@
+.new-word > .banner {
+    padding: 80px;
+    background: rgb(236, 236, 236);
+    text-align: center;
+}
+
+.new-word > .banner .info {
+    margin-top: 45px;
+    font-family: 黑体;
+    font-size: 54px;
+    color: rgb(50, 50, 50);
+}
+
+.new-word > .city-info {
+    background: url("../../images/task-7/bg2.png") no-repeat;
+    background-size: cover;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/task-7/bg2.png', sizingMethod=scale);
+}
+
+.new-word > .city-info .cover{
+    background-color: rgba(212, 93, 92, 0.2);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=#33D45D5C,endColorStr=#33D45D5C);
+    text-align: center;
+}
+
+.new-word > .city-info .title{
+    margin: 50px 0;
+    color: #ffffff;
+}
+
+.new-word > .city-info .sep{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+}
+
+.new-word > .city-info .select-form {
+    padding-bottom: 130px;
+}
+
+.new-word > .city-info .select-form > .select,.city-info .select-form > .btn{
+    display: inline-block;
+    width: 235px;
+    height: 35px;
+}
+
+.new-word > .city-info .select-form > .btn{
+    padding-left: 3em;
+    font-family: 微软雅黑;
+    font-size: 14px;
+    letter-spacing: 1.5em;
+}
+
+.new-word > .activity-info {
+    padding: 100px 0;
+    background: rgb(237, 237, 237);
+    text-align: center;
+}
+
+.new-word > .activity-info figure{
+    display: inline-block;
+    margin-right: 35px;
+}
+
+.new-word > .activity-info img{
+    display: inline-block;
+    padding: 10px;
+    background: #ffffff;
+    border: 1px solid rgb(200, 200, 200);
+}
+
+.new-word > .activity-info figcaption{
+    text-align: center;
+}
+
+.new-word > .activity-info h1, h3 {
+    font-family: 黑体;
+}
+
+.new-word > .activity-info h1 {
+    font-size: 16px;
+    margin: 12px 0;
+}
+
+.new-word > .activity-info h3 {
+    font-size: 14px;
+    color: gray;
+    margin: 8px 0;
+}
+
+.new-word > .activity-info .special{
+    font-size: 21px;
+    font-weight: bold;
+    letter-spacing: 2em;
+    padding-left: 2em;
+}
+
+.arrow-left {
+    display: inline-block;
+    border: 25px solid transparent;
+    border-right: 25px solid #ffffff;
+}
+
+.arrow-right {
+    display: inline-block;
+    border: 25px solid transparent;
+    border-left: 25px solid #ffffff;
+}
+
+.arrow-down {
+    display: inline-block;
+    position: relative;
+    width: 8px;
+    height: 1px;
+    background-color: rgb(0, 0, 0);
+    transform: rotate(-45deg);
+    vertical-align: middle;
+}
+
+.arrow-down:after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: -8px;
+    left: -1px;
+    width: 1px;
+    height: 9px;
+    background-color: rgb(0, 0, 0);
+}
+
+.new-word > .new-word-info {
+    font-family: 微软雅黑;
+}
+
+.new-word > .new-word-info > .col-1, .new-word > .new-word-info > .col-2{
+    padding: 130px 0;
+    text-align: center;
+}
+
+.new-word > .new-word-info .col-2 {
+    background:url("../../images/task-7/bg3.png") no-repeat;
+    background-size: cover;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/task-7/bg3.png', sizingMethod=scale);
+    color: #ffffff;
+}
+
+.new-word > .new-word-info .col-2{
+    position: relative;
+}
+
+.new-word > .new-word-info .col-2 .h2{
+    line-height: 1em;
+    font-size: 50px;
+    font-weight: normal;
+}
+
+.new-word > .new-word-info .col-2 .h1{
+    line-height: 1em;
+    font-size: 158px;
+}
+
+.new-word > .new-word-info .col-2 .h3{
+    line-height: 1em;
+    margin: 25px 0;
+    font-size: 21px;
+    text-align: center;
+}
+
+.new-word > .new-word-info .col-2 .arrow-left{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -12.5px;
+}
+
+.new-word > .new-word-info .col-2 .h3.special{
+    text-indent: -1.5em
+}
+
+.new-word > .new-word-info .col-1 {
+    padding: 100px 70px;
+}
+
+.new-word > .new-word-info .col-1 .h3 {
+    margin: 30px 0;
+    font-size: 21px;
+}
+
+
+.new-word > .new-word-info .col-1 .h3 > .special{
+    color: #D45D5C;
+}
+
+.new-word > .new-word-info .col-1 p{
+    margin: 25px 0;
+    font-family: 宋体;
+    font-size: 12px;
+    line-height: 30px;
+    text-align: left;
+    color: rgb(170,170,170);
+}
+
+.new-word > .new-word-info .col-1 .btn {
+    margin: 25px 0;
+    width: 100px;
+    line-height: 30px;
+    font-family: 微软雅黑;
+    font-size: 12px;
+}
+
+.new-word > .new-word-info .col-1 .nav li{
+    display: inline-block;
+    margin-right: 12px;
+    border: 1px solid gray;
+    width: 12px;
+    height: 12px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+}
+
+.new-word > .new-word-info .col-1 .nav li.active{
+    background: gray;
+}
+
+.new-word > .new-age {
+    height: 520px;
+}
+
+.new-word > .new-age .sep{
+    margin: 25px auto;
+    width: 30px;
+    height: 2px;
+}
+
+.new-word > .new-age > .left, .new-word > .new-age > .mid ,.new-word > .new-age > .right{
+    padding: 160px 0;
+    height: 100%;
+}
+
+.new-word > .new-age .btn {
+    margin: 30px auto;
+}
+
+.new-word > .new-age .left{
+    background-color: #D45D5C;
+    color: #ffffff;
+}
+
+.new-word > .new-age .left .btn{
+    border: 1px solid #ffffff;
+}
+
+.new-word > .new-age .left .sep{
+    background-color: #ffffff;
+}
+
+.new-word > .new-age .mid .sep{
+    background-color: gray;
+}
+
+.new-word > .new-age .mid .btn {
+    border-color: #D45D5C;
+}
+
+.new-word > .new-age .right{
+    position: relative;
+    background: url("../../images/task-7/bg4.png") no-repeat;
+    background-size: cover;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/task-7/bg4.png', sizingMethod=scale);
+    width: 33.3%;
+    overflow: hidden;
+}
+
+.new-word > .new-age .right > .arrow-right{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -12.5px;
+}
+
+.new-word > .new-age .right > .cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=#66000000,endColorStr=#66000000);
+    width: 100%;
+    height: 1000px;
+}
