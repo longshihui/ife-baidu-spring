@@ -131,13 +131,13 @@ select::-ms-expand { /* for IE 11 */
     clear: both;
 }
 
-.col-md-1 {
+.col-1 {
     box-sizing: border-box;
     width: 33.3%;
     float: left;
 }
 
-.col-md-2 {
+.col-2 {
     width: 66.6%;
     float: left;
     box-sizing: border-box;

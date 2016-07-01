@@ -132,66 +132,66 @@
     font-family: 微软雅黑;
 }
 
-.new-word > .new-word-info > .col-md-1, .new-word > .new-word-info > .col-md-2 {
+.new-word > .new-word-info > .col-1, .new-word > .new-word-info > .col-2 {
     padding: 130px 0;
     text-align: center;
 }
 
-.new-word > .new-word-info .col-md-2 {
+.new-word > .new-word-info .col-2 {
     background:url("../../images/task-7/bg3.png") no-repeat;
     background-size: cover;
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/task-7/bg3.png', sizingMethod=scale);
     color: #ffffff;
 }
 
-.new-word > .new-word-info .col-md-2 {
+.new-word > .new-word-info .col-2 {
     position: relative;
 }
 
-.new-word > .new-word-info .col-md-2 .h2{
+.new-word > .new-word-info .col-2 .h2{
     line-height: 1em;
     font-size: 50px;
     font-weight: normal;
 }
 
-.new-word > .new-word-info .col-md-2 .h1{
+.new-word > .new-word-info .col-2 .h1{
     line-height: 1em;
     font-size: 158px;
 }
 
-.new-word > .new-word-info .col-md-2 .h3{
+.new-word > .new-word-info .col-2 .h3{
     line-height: 1em;
     margin: 25px 0;
     font-size: 21px;
     text-align: center;
 }
 
-.new-word > .new-word-info .col-md-2 .arrow-left{
+.new-word > .new-word-info .col-2 .arrow-left{
     position: absolute;
     top: 50%;
     right: 0;
     margin-top: -12.5px;
 }
 
-.new-word > .new-word-info .col-md-2 .h3.special{
+.new-word > .new-word-info .col-2 .h3.special{
     text-indent: -1.5em
 }
 
-.new-word > .new-word-info .col-md-1 {
+.new-word > .new-word-info .col-1 {
     padding: 100px 70px;
 }
 
-.new-word > .new-word-info .col-md-1 .h3 {
+.new-word > .new-word-info .col-1 .h3 {
     margin: 30px 0;
     font-size: 21px;
 }
 
 
-.new-word > .new-word-info .col-md-1 .h3 > .special{
+.new-word > .new-word-info .col-1 .h3 > .special{
     color: #D45D5C;
 }
 
-.new-word > .new-word-info .col-md-1 p{
+.new-word > .new-word-info .col-1 p{
     margin: 25px 0;
     font-family: 宋体;
     font-size: 12px;
@@ -200,7 +200,7 @@
     color: rgb(170,170,170);
 }
 
-.new-word > .new-word-info .col-md-1 .btn {
+.new-word > .new-word-info .col-1 .btn {
     margin: 25px 0;
     width: 100px;
     line-height: 30px;
@@ -208,7 +208,7 @@
     font-size: 12px;
 }
 
-.new-word > .new-word-info .col-md-1 .nav li{
+.new-word > .new-word-info .col-1 .nav li{
     display: inline-block;
     margin-right: 12px;
     border: 1px solid gray;
@@ -219,7 +219,7 @@
     border-radius: 100%;
 }
 
-.new-word > .new-word-info .col-md-1 .nav li.active{
+.new-word > .new-word-info .col-1 .nav li.active{
     background: gray;
 }
 
