@@ -20,6 +20,46 @@ a:hover {
     text-decoration: none;
 }
 
+.num1 {
+    color: #d55a5a;
+}
+
+.num2 {
+    color: #febd12;
+}
+
+.num3 {
+    color: #27ae60;
+}
+
+.num4 {
+    color: #27aeaa;
+}
+
+.num5 {
+    color: #6e0482;
+}
+
+.num6 {
+    color: #223546;
+}
+
+.num7 {
+    color: #dc7200;
+}
+
+.num8 {
+    color: #fd5238;
+}
+
+.num9 {
+    color: #52bad5;
+}
+
+.num0 {
+    color: #ff5eaa;
+}
+
 .btn {
     display: inline-block;
     margin-bottom: 1rem;
@@ -133,13 +173,13 @@ a:hover {
     margin: 1rem 0;
 }
 
-.nav ul{
+.nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.nav li{
+.nav li {
 
 }
 
@@ -170,7 +210,7 @@ a:hover {
 
 }
 
-.stage-head{
+.stage-head {
     margin: 1rem 0;
 }
 
@@ -181,14 +221,25 @@ a:hover {
 }
 
 .task {
-    height: 150px;
+    position: relative;
+    text-align: center;
+    line-height: 150px;
+    font-size: 4rem;
 }
 
 .cover {
+    position: absolute;
+    top: 0;
+    left: 0;
     display: block;
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, 0);
     width: 100%;
-    height: 130px;
+    height: 170px;
+    transition: all .5s;
+}
+
+.cover:hover {
+    background-color: rgba(0, 0, 0, .5);
 }
 
 .site-footer {
@@ -200,7 +251,7 @@ a:hover {
     text-align: center;
 }
 
-.site-footer a{
+.site-footer a {
     color: #ed2f3f;
 }
 
