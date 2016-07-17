@@ -1,0 +1,19 @@
+{
+  "name": "ife-baidu",
+  "homepage": "https://github.com/longshihui/ife-baidu-spring",
+  "authors": [
+    "longshihui <391424924@qq.com>"
+  ],
+  "description": "百度春季前端训练",
+  "main": "",
+  "keywords": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

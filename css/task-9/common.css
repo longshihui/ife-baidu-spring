@@ -1,0 +1,524 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 微软雅黑, serif;
+    font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+    font: inherit;
+    color: inherit;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.block-right {
+    float: right;
+    padding-left: 1%;
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.container {
+    min-width: 1280px;
+    background-color: #2a2e3d;
+}
+
+.wrap {
+    margin-left: 260px;
+    background-color: #eeeeed;
+    overflow: hidden;
+}
+
+.content {
+    padding: 10px 60px 10px 60px;
+}
+
+.box {
+    box-shadow: 0 0 1px #cfd1d5;
+    background-color: #ffffff;
+    margin: 10px 0px;
+}
+
+.box-radius {
+    border-radius: 8px;
+    margin: 10px 0 0 0;
+}
+
+.box-radius-row {
+    width: 100.5%;
+}
+
+.box > .box-head {
+    border-radius: 8px 8px 0 0;
+    border-color: #f4f5f6;
+    padding: 0 25px;
+    background: #f4f5f6;
+    line-height: 40px;
+    color: #aaaaaa;
+}
+
+.box > .box-content {
+    padding: 10px 25px;
+}
+
+.path {
+    padding: .8em 30px;
+    background: #ffffff;
+    color: #aaaaaa;
+}
+
+.path ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.path li {
+    float: left;
+}
+
+.path li:after {
+    content: '/';
+    display: inline-block;
+    padding: 0 .8em;
+}
+
+.path .active {
+    color: #2189bf;
+}
+
+.path .active:after {
+    content: '';
+}
+
+.search-section {
+    padding: 10px 15px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.search-section .huan {
+    display: inline-block;
+    position: relative;
+    margin-left: 5px;
+    border-top: 2px solid #aaaaaa;
+    border-right: 2px solid #aaaaaa;
+    border-bottom: 2px solid #aaaaaa;
+    width: 20px;
+    height: 28px;
+    float: right;
+}
+
+.search-section .huan:before, .search-section .huan:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -5px;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-right: 5px solid #aaaaaa;
+}
+
+.search-section .huan:before {
+    top: -5px;
+}
+
+.search-section .huan:after {
+    bottom: -5px;
+}
+
+.search-section .huan > .info {
+    position: absolute;
+    top: 50%;
+    right: -.6em;
+    padding: .1em;
+    background: #aaaaaa;
+    color: #ffffff;
+    transform: translate(0, -50%);
+}
+
+.search-section .btn-wrap {
+    display: table;
+    width: 100%;
+    height: 65px;
+}
+
+.search-section .btn-wrap > .btn-group {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.history-section {
+    text-align: center;
+    overflow: hidden;
+}
+
+.history-section .control, .history-section .item, .history-section .history-search {
+    height: 65px;
+    float: left;
+    margin-right: .5%;
+}
+
+.history-section .history-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.history-section .item {
+    width: 12%;
+}
+
+.history-section .control {
+    width: 3%;
+    line-height: 65px;
+    font-size: 18px;
+    color: #aaaaaa;
+}
+
+.history-section .content {
+    border-top: 3px solid transparent;
+    padding: 0;
+    width: 100%;
+    height: 62px;
+    vertical-align: middle;
+}
+
+.history-section .active .content {
+    border-color: #2189bf;
+}
+
+.history-section .time {
+    margin: .5rem 0;
+    color: #323333;
+}
+
+.history-section .price {
+    font-size: 21px;
+    color: #ec6500;
+}
+
+.history-section .price:before {
+    content: '¥';
+    font-size: 14px;
+    color: #aaaaaa;
+}
+
+.history-section .history-search {
+    width: 18%;
+    line-height: 65px;
+    margin-right: 0;
+}
+
+.history-section .history-search [class*='icon'] {
+    display: inline-block;
+    margin: 0 .5rem;
+    font-size: 35px;
+    color: #2189bf;
+    vertical-align: middle;
+}
+
+.statistical-section {
+    margin-top: 10px;
+    width: 103%;
+}
+
+.statistical-section > h3 {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+.statistical-section .item {
+    padding-right: 3%;
+}
+
+.statistical-section .box {
+    border-left: 4px solid transparent;
+    padding: 15px 15px 15px 10px;
+    margin: 10px 0;
+}
+
+.statistical-section .num {
+    line-height: 25px;
+}
+
+.statistical-section .info {
+    color: #aaaaaa;
+}
+
+.statistical-section .mark {
+    width: 60px;
+    height: 45px;
+    background: transparent;
+    float: right;
+}
+
+.statistical-section .green {
+    border-color: #43b29e;
+}
+
+.statistical-section .green .mark {
+    background-color: #43b29e;
+}
+
+.statistical-section .blue {
+    border-color: #388ac1;
+}
+
+.statistical-section .blue .mark {
+    background-color: #388ac1;
+}
+
+.statistical-section .red {
+    border-color: #d04b36;
+}
+
+.statistical-section .red .mark {
+    background-color: #d04b36;
+}
+
+.statistical-section .yellow {
+    border-color: #e2cd47;
+}
+
+.statistical-section .yellow .mark {
+    background-color: #e2cd47;
+}
+
+.tab {
+
+}
+
+.tab .tab-control, .tab .tab-content {
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+}
+
+.tab .tab-control ul, .tab .tab-content ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tab .tab-control li {
+    position: relative;
+    float: left;
+    margin-right: 3px;
+    border-radius: 5px 5px 0 0;
+    border: 2px solid transparent;
+    background-color: #ededf0;
+    background-clip: padding-box;
+}
+
+.tab .tab-control a {
+    display: inline-block;
+    padding: .5rem 25px;
+}
+
+.tab .tab-control .active {
+    border-color: #cacbcb;
+    background-color: #ffffff;
+}
+
+.tab .tab-control .active:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+}
+
+.tab .tab-content {
+    top: -2px;
+    border: 2px solid #cacbcb;
+    border-radius: 0 0 5px 5px;
+    padding: 25px;
+    z-index: 1;
+}
+
+.table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.table-fluid {
+    width: 100%;
+}
+
+.table-content-center {
+    text-align: center;
+}
+
+.table-border td, .table-border th {
+    border: 1px solid #ededf0;
+    padding: .8em 0;
+}
+
+.table-td-hover td:hover {
+    background-color: #d3d3d3;
+}
+
+.table-tr-hover tr:hover {
+    background-color: #d3d3d3;
+}
+
+.report {
+    text-indent: 1.2em;
+    overflow: hidden;
+}
+
+.report .subheader .part {
+    border: 1px solid #e7e7e7;
+    border-left: none;
+}
+
+.report .subheader .part:last-child {
+    border-right: none;
+}
+
+.report .head {
+    margin: .5em 0;
+    color: #c3c2c2;
+}
+
+.report .info {
+    margin: .5em 0;
+}
+
+.report .price:before {
+    content: '¥ ';
+}
+
+.report .detail {
+    min-height: 145px;
+}
+
+.report .footer {
+    border-top: 1px solid #e7e7e7;
+    padding: .5em 0;
+}
+
+.report .footer .agreement {
+    color: #c3c2c2;
+    float: left;
+}
+
+.report .footer .agreement input {
+    vertical-align: middle;
+}
+
+.report .footer .action {
+    float: right;
+}
+
+.calendar {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 3px;
+    border: none;
+}
+
+.calendar td {
+    vertical-align: middle;
+    padding:.5em;
+    text-align: center;
+}
+
+.calendar .day {
+    padding: .25em 0;
+}
+
+.calendar .search td{
+    border-bottom: 1px solid #2189bf;
+
+}
+
+.calendar .search td * {
+    width: 23%;
+}
+
+.calendar .week td {
+    width: 14.285%;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.calendar .weekend .day {
+    color: #c9161d;
+}
+
+.calendar .selected {
+    border: 1px solid #f7d563;
+}
+
+.calendar .important .info {
+    color: #c9161d;
+}
+
+.top {
+    counter-reset: top-rank;
+}
+
+.top .rank:before {
+    counter-increment: top-rank;
+    content: counter(top-rank);
+}
+
+.top .brand,.top .rank {
+    width: 20%;
+}
+
+
+
+.top td, .top th {
+    padding: .5em 1em;
+    vertical-align: middle;
+}
+
+.top .search-rank {
+    display: inline-block;
+    margin-right: 3%;
+    width: 25%;
+}
+
+.top .progress {
+    display: inline-block;
+    width: 70%;
+}
+
+.progress {
+    position: relative;
+    height: 5px;
+    background-color: #f4f5f6;
+}
+
+.progress .bar{
+    height: 5px;
+    background-color: #7fcbf0;
+}
+
+.progress .bar.red{
+    background-color: #ed6e52;
+}
+
+.progress .bar.orange{
+    background-color: #ef804f;
+}
+
+.progress .bar.orange-yellow{
+    background-color: #f19f4f;
+}

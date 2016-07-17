@@ -1,0 +1,87 @@
+input, select {
+    border: 1px solid #aaaaaa;
+    min-height: 25px;
+    color: rgb(0, 0, 0);
+    padding-left: 1em;
+    font-family: inherit;
+    font-size: 12px;
+    outline: none;
+}
+
+select {
+    display: inline-block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: #ffffff url("../../images/task-9/select-arrow-down.png") no-repeat 95% center;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+input:focus, select:focus {
+    border: 1px solid #aaaaaa;
+}
+
+.input-group, .input-group-btn {
+    display: inline-block;
+    line-height: 1;
+    margin: 5px 0;
+}
+
+.input-group > .label {
+    display: inline-block;
+    padding:0 1em;
+    vertical-align: middle;
+    text-align: center;
+    color: #aaaaaa;
+}
+
+.input-group-btn {
+    position: relative;
+    background: #ffffff;
+}
+
+.input-group-btn > .input-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-weight: 400;
+    color: #aaaaaa;
+}
+
+.btn {
+    outline: 0;
+    border: none;
+    border-radius: 3px;
+    padding: .5em 1em;
+    background: #2189bf;
+    color: #ffffff;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-white {
+    outline: 0;
+    border: 1px solid #aaaaaa;
+    background-color: #ffffff;
+    padding: 0;
+    line-height: 23px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #2189b0;
+}
+
+.input-md {
+    width: 120px;
+}
+
+.input-sm {
+    width: 70px;
+}
+
+input[type='checkbox'] {
+    visibility: hidden;
+}
