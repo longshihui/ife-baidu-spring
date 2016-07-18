@@ -373,7 +373,7 @@ a {
     background-color: #d3d3d3;
 }
 
-.table-tr-hover tr:hover {
+.table-tr-hover tbody tr:hover {
     background-color: #d3d3d3;
 }
 
