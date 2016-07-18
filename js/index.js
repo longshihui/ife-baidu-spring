@@ -24,13 +24,13 @@ var promise = function (){
             $.ajax({
                     url: url,
                     success: function () {
-                        render(groupID, taskID);
+                        render(groupID, taskID, url);
                     }
                 }
             )
         }
 
-        function render(groupID, taskID) {
+        function render(groupID, taskID, url) {
             var groupNum = groupID + 1;
             var stage = $('#stage-' + groupNum);
 
@@ -45,7 +45,7 @@ var promise = function (){
 
             var task_list = stage.children('.task-list');
             var task = $('<li class="task col-md-3 col-sm-6"></li>');
-            var cover = $('<a href="#" class="cover"></a>');
+            var cover = $('<a href="'+ url +'" class="cover"></a>');
 
             task.append(cover);
 

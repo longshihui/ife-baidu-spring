@@ -1,0 +1,89 @@
+.num1 {
+    color: #d55a5a;
+}
+
+.num2 {
+    color: #febd12;
+}
+
+.num3 {
+    color: #27ae60;
+}
+
+.num4 {
+    color: #27aeaa;
+}
+
+.num5 {
+    color: #6e0482;
+}
+
+.num6 {
+    color: #223546;
+}
+
+.num7 {
+    color: #dc7200;
+}
+
+.num8 {
+    color: #fd5238;
+}
+
+.num9 {
+    color: #52bad5;
+}
+
+.num0 {
+    color: #ff5eaa;
+}
+
+.btn {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0.3rem;
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+}
+
+.btn + .btn {
+    margin-left: 1rem;
+}
+
+.btn:hover {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+@media screen and (min-width: 64em) {
+    .btn {
+        padding: 0.75rem 1rem;
+    }
+}
+
+@media screen and (min-width: 42em) and (max-width: 64em) {
+    .btn {
+        padding: 0.6rem 0.9rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 42em) {
+    .btn {
+        display: block;
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .btn + .btn {
+        margin-top: 1rem;
+        margin-left: 0;
+    }
+}
