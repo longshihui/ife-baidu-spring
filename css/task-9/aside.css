@@ -1,0 +1,96 @@
+.aside {
+    float: left;
+    width: 260px;
+    font-weight: bold;
+}
+
+.aside .user-info {
+    padding: 15px 30px 20px 30px;
+}
+
+.user-info .avatar{
+    margin: 0 auto;
+    border: 1px solid #b9babd;
+    border-radius: 50%;
+    padding: 3px;
+    width: 60px;
+    height: 60px;
+    background-color: #b9babd;
+    background-clip: content-box;
+    outline: 0;
+    display: block;
+}
+
+.user-info .username {
+    font-size: 16px;
+    color: #f6f5f5;
+    height: 60px;
+    display: table;
+}
+
+.user-info .username > span{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.user-info .fans,.user-info .favor{
+    margin: 20px 0;
+    color: #6e8095;
+    text-align: center;
+}
+
+.user-info .favor {
+    border-right: 1px solid #6e8095;
+}
+
+.user-feature {
+}
+
+.tree{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tree [class*='icon-'] {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.tree .root > [class*='icon-']{
+    margin:0 15px;
+}
+
+.tree [class*='icon-angle'] {
+    margin: 0;
+    transition: .3s all;
+}
+
+.tree li{
+    padding:0 30px;
+    color: #6e8095;
+}
+
+.tree .root {
+    padding-top:8px;
+    padding-bottom: 8px;
+}
+
+.tree .active{
+    color: #ffffff;
+    background-color: #383d4e;
+}
+
+.tree a{
+    display: inline-block;
+    padding: 8px 0;
+}
+
+.tree a:hover{
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.tree li:not(.active) a:hover [class*='icon-angle']{
+    transform: rotate(90deg);
+}
