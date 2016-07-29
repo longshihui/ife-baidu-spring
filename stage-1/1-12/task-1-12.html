@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>任务十二</title>
+    <link rel="stylesheet" href="../../css/normalize.css">
+    <style>
+        section {
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .table {
+            border-collapse: separate;
+            border-spacing: 1px;
+            border-color: #fff;
+            width: 80%;
+            margin: 0 auto;
+            counter-reset: num;
+        }
+
+        .table .num {
+            counter-increment: num;
+        }
+
+        .table .num:before {
+            content: counter(num) '.';
+        }
+
+        .table th {
+            background-color: #000;
+            color: #ffffff;
+        }
+
+        .table tbody tr:nth-child(even) {
+            background: #aaa;
+        }
+
+        .table tbody tr:nth-child(1), .table tbody tr:nth-child(2), .table tbody tr:nth-child(3) {
+            color: #f00;
+        }
+
+        input {
+            width: 20%;
+            transition: .5s all;
+        }
+
+        input:focus {
+            width: 50%;
+        }
+
+        .banner {
+            position: relative;
+            width: 400px;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .banner ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .banner .banner-nav {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            z-index: 9999;
+        }
+
+        .banner .banner-nav > li {
+            margin: 0 1px;
+            width: 2em;
+            line-height: 2em;
+            background: rgba(255, 255, 255, 0.5);
+            color: #fff;
+            float: left;
+        }
+
+        .banner .banner-nav > li:last-child {
+            margin-right: 0;
+        }
+
+        .banner .banner-content {
+            width: 100%;
+            height: 100%;
+        }
+
+        .banner .banner-content > li {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            animation: slider-out 1s ease;
+        }
+
+        .banner .banner-content > li:target {
+            animation: slider-in 1s ease forwards;
+        }
+
+        @keyframes slider-out  {
+            0%{
+                left: 0;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+
+        @keyframes slider-in {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 0;
+            }
+        }
+
+        .red {
+            background-color: #f00;
+        }
+
+        .green {
+            background-color: #0f0;
+        }
+
+        .blue {
+            background-color: #00f;
+        }
+    </style>
+</head>
+<body>
+<article>
+    <section>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>
+                    排名
+                </th>
+                <th>
+                    网站
+                </th>
+                <th>
+                    热度
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="num"></td>
+                <td>百度前端技术学院</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="num"></td>
+                <td>百度前端技术学院</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="num"></td>
+                <td>百度前端技术学院</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="num"></td>
+                <td>百度前端技术学院</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="num"></td>
+                <td>百度前端技术学院</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="num"></td>
+                <td>百度前端技术学院</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="num"></td>
+                <td>百度前端技术学院</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="num"></td>
+                <td>百度前端技术学院</td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <input type="text">
+    </section>
+
+    <section>
+        <div class="banner">
+            <ul class="banner-content blue">
+                <li class="blue" id="view1"></li>
+                <li class="red" id="view2"></li>
+                <li class="green" id="view3"></li>
+            </ul>
+            <ul class="banner-nav">
+                <li><a href="#view1">1</a></li>
+                <li><a href="#view2">2</a></li>
+                <li><a href="#view3">3</a></li>
+            </ul>
+        </div>
+    </section>
+</article>
+</body>
+</html>

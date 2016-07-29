@@ -1,41 +1,44 @@
-.num1 {
-    color: #d55a5a;
+[class*='color'] {
+    color: #ffffff !important;
+}
+.color1 {
+    background-color: #d55a5a !important;
 }
 
-.num2 {
-    color: #febd12;
+.color2 {
+    background-color: #febd12 !important;
 }
 
-.num3 {
-    color: #27ae60;
+.color3 {
+    background-color: #27ae60 !important;
 }
 
-.num4 {
-    color: #27aeaa;
+.color4 {
+    background-color: #27aeaa !important;
 }
 
-.num5 {
-    color: #6e0482;
+.color5 {
+    background-color: #6e0482 !important;
 }
 
-.num6 {
-    color: #223546;
+.color6 {
+    background-color: #223546 !important;
 }
 
-.num7 {
-    color: #dc7200;
+.color7 {
+    background-color: #dc7200 !important;
 }
 
-.num8 {
-    color: #fd5238;
+.color8 {
+    background-color: #fd5238 !important;
 }
 
-.num9 {
-    color: #52bad5;
+.color9 {
+    background-color: #52bad5 !important;
 }
 
-.num0 {
-    color: #ff5eaa;
+.color0 {
+    background-color: #ff5eaa !important;
 }
 
 .btn {
@@ -86,4 +89,10 @@
         margin-top: 1rem;
         margin-left: 0;
     }
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
 }

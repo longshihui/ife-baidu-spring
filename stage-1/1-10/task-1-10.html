@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../css/normalize.css">
+    <style>
+        .flex-container {
+            border: 1px solid #aaaaaa;
+            padding: 20px;
+
+            display: flex;
+            flex-direction: row;
+            display: -webkit-flex;
+            -webkit-flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .flex-item {
+            border: 1px solid;
+            background: #ffffff;
+            background-clip: content-box;
+
+            flex: 0 1 150px;
+            order: 1;
+        }
+
+        .one {
+            height: 120px;
+        }
+
+        .two {
+            height: 100px;
+        }
+
+        .three {
+            height: 40px;
+        }
+
+        .four {
+            height: 200px;
+        }
+
+        .red {
+            border-color: #f00;
+        }
+
+        .blue {
+            border-color: #00f;
+        }
+
+        @media screen and (max-width: 640px) {
+            .flex-container {
+                align-items: flex-start;
+            }
+
+            .flex-item {
+                margin-bottom: 10px;
+            }
+
+            .blue {
+                order: 0;
+            }
+        }
+
+        .screen-info {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+
+            background: #AAAAAA;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div class="screen-info">
+</div>
+<div class="flex-container">
+    <div class="flex-item red one"></div>
+    <div class="flex-item red two"></div>
+    <div class="flex-item red three"></div>
+    <div class="flex-item blue four"></div>
+</div>
+<script>
+    window.onload = function () {
+        var el = document.querySelector('.screen-info');
+
+        function printScreenInfo() {
+            el.innerHTML = '' + window.innerWidth + ' x ' + window.innerHeight + ' px'
+        }
+
+        printScreenInfo();
+
+        if (window.addEventListener) {
+            window.addEventListener('resize', printScreenInfo)
+        }
+    }
+</script>
+</body>
+</html>
