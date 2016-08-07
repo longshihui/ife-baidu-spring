@@ -1,0 +1,28 @@
+{
+  "name": "ife-baidu",
+  "version": "1.0.0",
+  "description": "2016百度前端技术春季班练习",
+  "main": "\"\"",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/longshihui/ife-baidu-spring.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "js'"
+  ],
+  "author": "colorless",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/longshihui/ife-baidu-spring/issues"
+  },
+  "homepage": "https://github.com/longshihui/ife-baidu-spring#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2"
+  }
+}
