@@ -19,6 +19,7 @@
         }
     }
 
+    alert(dpr);
 
     win.addEventListener('load', flexiable);
     win.addEventListener('resize', flexiable);
