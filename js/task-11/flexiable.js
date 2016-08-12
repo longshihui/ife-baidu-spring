@@ -1,7 +1,6 @@
 'use strict';
 
 (function (win, doc) {
-    var dpr = win.devicePixelRatio;
 
     var maxWidth = 768;
     var maxFontSize = 32;
@@ -12,7 +11,6 @@
 
     function flexiable() {
         var width = win.innerWidth || doc.documentElement.clientWidth || doc.body.clientWidth;
-        alert(width);
         if (width >= maxWidth) {
             setFontSize(maxFontSize);
         } else {
@@ -20,7 +18,7 @@
         }
     }
 
-    win.addEventListener('load', flexiable);
+    win.addEventListener('DOMContentLoaded', flexiable);
     win.addEventListener('resize', flexiable);
     
 })(window, document);
