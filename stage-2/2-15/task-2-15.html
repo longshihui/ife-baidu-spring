@@ -28,6 +28,22 @@
 <button id="sort-btn">排序</button>
 
 <script type="text/javascript">
+    /**
+     * CH_Number
+     * 数字转换中文map对象
+     */
+    var CH_Number = {
+        '0': '零',
+        '1': '一',
+        '2': '二',
+        '3': '三',
+        '4': '四',
+        '5': '五',
+        '6': '六',
+        '7': '七',
+        '8': '八',
+        '9': '九'
+    };
 
     /**
      * getData方法
@@ -48,6 +64,8 @@
          */
         var sourceLis = document.querySelectorAll('#source > li'),
                 data = [];
+        sourceLis = Array.prototype.slice.call(sourceLis, 0);
+
         sourceLis.forEach(function (li) {
             data.push(/(.+)空气质量.*<\w+>(\d+)<\/\w+>/ig.exec(li.innerHTML).slice(1));
         });
@@ -62,7 +80,7 @@
      * 返回一个排序后的数组
      */
     function sortAqiData(data) {
-        return data.sort(function (city1, city2){
+        return data.sort(function (city1, city2) {
             return parseInt(city2[1]) - parseInt(city1[1]);
         })
     }
@@ -75,9 +93,9 @@
     function render(data) {
         var resort = document.querySelector('#resort');
         var newLi;
-        data.forEach(function (city) {
+        data.forEach(function (city, index) {
             newLi = document.createElement('li');
-            newLi.innerHTML = '第一名：' + city[0] + '空气质量：<b>' + city[1];
+            newLi.innerHTML = '第'+ CH_Number[index + 1] +'名：' + city[0] + '空气质量：<b>' + city[1];
             resort.appendChild(newLi);
         })
     }
