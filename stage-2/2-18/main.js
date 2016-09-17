@@ -159,7 +159,6 @@ QueueRender.action.out = function (direct) {
         return;
     }
     var lastNode = this.getQueryLastChild(direct);
-    alert(this.displayBlock.childNodes.length);
     this.displayBlock.removeChild(lastNode);
     if (direct === 'left') {
         alert(this.queue.shift());
