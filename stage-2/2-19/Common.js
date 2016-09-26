@@ -29,13 +29,21 @@ var Util = {
      * @returns {*}
      */
     extend: function (targetObj) {
-        for(var i = 1, len = arguments.length; i < len; i++){
-            for (var propName in arguments[i]){
+        for (var i = 1, len = arguments.length; i < len; i++) {
+            for (var propName in arguments[i]) {
                 if (arguments[i].hasOwnProperty(propName))
-                targetObj[propName] = arguments[i][propName];
+                    targetObj[propName] = arguments[i][propName];
             }
         }
         return targetObj;
+    },
+    /**
+     * 主线程休眠函数
+     * @param msec
+     */
+    sleep: function (msec) {
+        var begin = Date.now();
+        while (msec > Date.now() - begin) {
+        }
     }
-
 };

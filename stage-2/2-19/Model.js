@@ -83,5 +83,12 @@ Queue.prototype = {
      */
     isSpill: function () {
         return this.data.length === Queue.MAX_LEN;
+    },
+    /**
+     * 返回内部数据结构
+     * @returns {Array}
+     */
+    getData: function () {
+        return this.data;
     }
 };

@@ -34,142 +34,166 @@ var Presenter = (function () {
          * @param data
          */
         notify: function (presenterName, routerName, data) {
-            presenterMap[presenterName]['router'][routerName].apply(presenterMap[presenterName], data);
+            presenterMap[presenterName]['router'][routerName].apply(presenterMap[presenterName], data || []);
         }
     }
 })();
 
-Presenter.register('PQueue', 'VQueue', new Queue(), {
-    'in': function (direct, inputData) {
-        var queue = this.model;
-        try {
-            if (direct === 'left') {
-                queue.unshift(inputData);
-            } else {
-                queue.push(inputData);
-            }
-        } catch (err) {
-            View.trigger(this.viewName, 'error', [err]);
-            return;
-        }
-        View.trigger(this.viewName, 'in', [direct, inputData]);
-    },
-    'out': function (direct) {
-        var queue = this.model, value;
-        try {
-            if (direct === 'left') {
-                value = queue.shift();
-            } else {
-                value = queue.pop();
-            }
-        } catch (err) {
-            View.trigger(this.viewName, 'error', [err]);
-            return;
-        }
-        View.trigger(this.viewName, 'out', [direct, value]);
-    },
-    'outById': function (index) {
-        var queue = this.model, value;
-        try {
-            value = queue.deleteElByIndex(index);
-        } catch (err) {
-            View.trigger(this.viewName, 'error', [err]);
-            return;
-        }
-        View.trigger(this.viewName, 'outById', [index ,value])
-    }
-});
-
-/**
- * 排序集合
- * @type {{bubble, insert, select, quick}}
- */
-var Sort = (function () {
-    var defaultComparator = function (a, b) {
-            return a > b;
-        },
-        defaultCallback = function () {
-
-        };
+(function () {
+    var queue = new Queue();
 
     /**
-     * 数组元素交换函数
-     * @param arr
-     * @param preIndex
-     * @param nextIndex
-     * @param isNeedSwap
-     * @param callback
+     * 排序集合
+     * @type {{bubble, insert, select, quick}}
      */
-    function swap(arr, preIndex, nextIndex, isNeedSwap, callback) {
-        if (isNeedSwap) {
-            var temp = arr[preIndex];
-            arr[preIndex] = arr[nextIndex];
-            arr[nextIndex] = temp;
-        }
-        callback();
-    }
+    var Sort = (function () {
+        var defaultComparator = function (a, b) {
+                return a > b;
+            },
+            defaultCallback = function () {
 
-    function getComparator(args) {
-        if (args.length === 3 && typeof args[1] === "function") {
-            return args[1];
-        } else {
-            return defaultComparator;
-        }
-    }
+            };
 
-    function getCallback(args) {
-        if (args.length === 3 && typeof args[2] === "function") {
-            return args[2];
-        } else if (args.length === 2 && typeof args[1] === "function") {
-            return args[1];
-        } else {
-            return defaultCallback;
-        }
-    }
-
-    return {
         /**
-         * 冒泡排序
+         * 数组元素交换函数
          * @param arr
+         * @param preIndex
+         * @param nextIndex
+         * @param isNeedSwap
+         * @param callback
          */
-        bubble: function (arr) {
-            if (!Array.isArray(arr))
-                throw new Error('不是一个合法的数组');
-            if (!arr.length)
-                return [];
-            var comparator = getComparator(arguments),
-                callback = getCallback(arguments);
-
-            for (var i = 0, len = arr.length; i < len; i++) {
-                for (var j = i + 1; j < len; j++) {
-                    swap(arr, i, j, comparator(arr[i], arr[j]), callback);
-                }
+        function swap(arr, preIndex, nextIndex, isNeedSwap, callback) {
+            if (isNeedSwap) {
+                var temp = arr[preIndex];
+                arr[preIndex] = arr[nextIndex];
+                arr[nextIndex] = temp;
+                callback(arr, preIndex, nextIndex);
             }
-            return arr;
-        },
-        /**
-         * 插入排序
-         * @param arr
-         * @param swap
-         */
-        insert: function (arr, swap) {
-
-        },
-        /**
-         * 选择排序
-         * @param arr
-         * @param swap
-         */
-        select: function (arr, swap) {
-
-        },
-        /**
-         * 快速排序
-         * @param arr
-         * @param swap
-         */
-        quick: function (arr, swap) {
-
         }
-    };
+
+        function getComparator(args) {
+            if (args.length === 3 && typeof args[1] === "function") {
+                return args[1];
+            } else {
+                return defaultComparator;
+            }
+        }
+
+        function getCallback(args) {
+            if (args.length === 3 && typeof args[2] === "function") {
+                return args[2];
+            } else if (args.length === 2 && typeof args[1] === "function") {
+                return args[1];
+            } else {
+                return defaultCallback;
+            }
+        }
+
+        return {
+            /**
+             * 冒泡排序
+             * @param arr
+             */
+            bubble: function (arr) {
+                if (!Array.isArray(arr))
+                    throw new Error('不是一个合法的数组');
+                if (!arr.length)
+                    return [];
+                var comparator = getComparator(arguments),
+                    callback = getCallback(arguments);
+
+                for (var i = 0, len = arr.length; i < len; i++) {
+                    for (var j = i + 1; j < len; j++) {
+                        swap(arr, i, j, comparator(arr[i], arr[j]), callback);
+                    }
+                }
+                return arr;
+            },
+            /**
+             * 插入排序
+             * @param arr
+             * @param swap
+             */
+            insert: function (arr, swap) {
+
+            },
+            /**
+             * 选择排序
+             * @param arr
+             * @param swap
+             */
+            select: function (arr, swap) {
+
+            },
+            /**
+             * 快速排序
+             * @param arr
+             * @param swap
+             */
+            quick: function (arr, swap) {
+
+            }
+        };
+    })();
+
+    Presenter.register('PQueue', 'VQueue', queue, {
+        'in': function (direct, inputData) {
+            var queue = this.model;
+            try {
+                if (direct === 'left') {
+                    queue.unshift(inputData);
+                } else {
+                    queue.push(inputData);
+                }
+            } catch (err) {
+                View.trigger(this.viewName, 'error', [err]);
+                return;
+            }
+            View.trigger(this.viewName, 'in', [direct, inputData]);
+        },
+        'out': function (direct) {
+            var queue = this.model, value;
+            try {
+                if (direct === 'left') {
+                    value = queue.shift();
+                } else {
+                    value = queue.pop();
+                }
+            } catch (err) {
+                View.trigger(this.viewName, 'error', [err]);
+                return;
+            }
+            View.trigger(this.viewName, 'out', [direct, value]);
+        },
+        'outById': function (index) {
+            var queue = this.model, value;
+            try {
+                value = queue.deleteElByIndex(index);
+            } catch (err) {
+                View.trigger(this.viewName, 'error', [err]);
+                return;
+            }
+            View.trigger(this.viewName, 'outById', [index, value])
+        },
+        'sort': function (sortType) {
+            var data = queue.getData(),
+                swapIndexCollection = [],
+                viewName = this.viewName,
+                callback = function (arr, preIndex, nextIndex) {
+                    swapIndexCollection.push([preIndex, nextIndex]);
+                };
+            switch (sortType) {
+                case 'bubble':
+                    Sort.bubble(data, callback);
+                    break;
+                case 'quick':
+                    Sort.quick(data);
+                    break;
+                case 'select':
+                    Sort.select(data);
+                    break;
+            }
+            View.trigger(viewName, 'sortAnimate', [swapIndexCollection]);
+        }
+    });
 })();
