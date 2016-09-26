@@ -48,7 +48,7 @@ var Presenter = (function () {
      */
     var Sort = (function () {
         var defaultComparator = function (a, b) {
-                return a > b;
+                return parseInt(a) > parseInt(b);
             },
             defaultCallback = function () {
 
