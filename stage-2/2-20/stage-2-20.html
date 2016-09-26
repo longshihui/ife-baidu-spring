@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <title>task-2-20</title>
     <link rel="stylesheet" href="../../css/normalize.css">
-    <script type="text/javascript" src="main.js"></script>
     <style>
         #entry {
-            min-width: 100px;
+            min-width: 300px;
+            height: 300px;
+            vertical-align: middle;
         }
 
         .btn-group {
@@ -21,6 +22,7 @@
             border-radius: 5px;
             padding: .3em .5em;
             transition: .3s background;
+            cursor: pointer;
         }
 
         .btn:hover {
@@ -41,7 +43,7 @@
 </head>
 <body>
 <div class="control">
-    <input type="text" id="entry">
+    <textarea id="entry"></textarea>
     <div class="btn-group">
         <button class="btn" id="left-in">左侧入</button>
         <button class="btn" id="right-in">右侧入</button>
@@ -52,9 +54,9 @@
     </div>
 </div>
 <div id="queue-display"></div>
+<script type="text/javascript" src="Common.js"></script>
+<script type="text/javascript" src="Model.js"></script>
+<script type="text/javascript" src="Presenter.js"></script>
+<script type="text/javascript" src="View.js"></script>
 </body>
-<script>
-
-
-</script>
 </html>

@@ -62,30 +62,9 @@ View.register('VQueue', 'PQueue', (function () {
                 right: {
                     inDOM: Util.$("#right-in"),
                     outDOM: Util.$("#right-out")
-                },
-                sort: {
-                    bubble: Util.$("#bubble-sort")
                 }
             },
             ElementClassName: 'queue-el'
-        },
-        wrapHeight = parseInt(window.getComputedStyle(setting.wrap).height),
-        /**
-         * 切换视图中按钮的禁用状态
-         */
-        toggleBtn = function () {
-            var btnGroup, curBtn;
-            for (var groupName in setting.btns) {
-                if (setting.btns.hasOwnProperty(groupName)) {
-                    btnGroup = setting.btns[groupName];
-                    for (var btnName in btnGroup) {
-                        if (btnGroup.hasOwnProperty(btnName)) {
-                            curBtn = btnGroup[btnName];
-                            curBtn.disabled = (curBtn.disabled ? false : true);
-                        }
-                    }
-                }
-            }
         },
         /**
          * 创建DOM;
@@ -99,9 +78,6 @@ View.register('VQueue', 'PQueue', (function () {
             attr.nodeValue = setting.ElementClassName;
             div.appendChild(text);
             div.setAttributeNode(attr);
-            var marginTop = (100 - parseInt(number)) * (wrapHeight / 100);
-            div.style.marginTop = marginTop + 'px';
-            div.style.height = wrapHeight - marginTop + 'px';
             return div;
         },
         /**
@@ -178,12 +154,6 @@ View.register('VQueue', 'PQueue', (function () {
                 var id = getDOMIndex(originEl);
                 Presenter.notify(presenterName, 'outById', [id])
             });
-            /**
-             * 排序按钮监听
-             */
-            Util.addDOMEvent(btns.sort.bubble, 'click', function () {
-                Presenter.notify(presenterName, 'sort', ['bubble']);
-            })
         },
         render: {
             'in': function (direct, number) {
@@ -206,39 +176,6 @@ View.register('VQueue', 'PQueue', (function () {
                 var wrap = setting.wrap;
                 wrap.removeChild(wrap.childNodes[id]);
                 alert(number);
-            },
-            'sortAnimate': function (swapIndexArray) {
-                var wrap = setting.wrap,
-                    curSwapTime = 0,
-                    swapCount = swapIndexArray.length,
-                    preIndex,
-                    nextIndex;
-
-                toggleBtn();
-
-                var timer = setInterval(function () {
-                    if (curSwapTime < swapCount) {
-                        preIndex = swapIndexArray[curSwapTime][0];
-                        nextIndex = swapIndexArray[curSwapTime][1];
-                        var pre = wrap.children[preIndex],
-                            next = wrap.children[nextIndex],
-                            preClone = pre.cloneNode(true),
-                            nextClone = next.cloneNode(true);
-
-                        wrap.insertBefore(nextClone, pre);
-                        wrap.insertBefore(preClone, next);
-
-                        wrap.removeChild(next);
-                        wrap.removeChild(pre);
-
-                        curSwapTime++;
-                    } else {
-                        clearInterval(timer);
-                        toggleBtn();
-                    }
-                }, 1000);
-
-                // Util.sleep(1000);
             },
             'error': function (err) {
                 alert(err.message);
