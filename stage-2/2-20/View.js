@@ -1,53 +1,4 @@
 'use strict';
-/**
- * 视图管理类
- * @type {{register, cancel, getView}}
- */
-var View = (function () {
-    /**
-     * 视图基类
-     * @param viewName
-     * @param presenterName
-     * @constructor
-     */
-    function BaseView(viewName, presenterName) {
-        this.name = viewName;
-        this.presenterName = presenterName;
-    }
-
-    var viewMap = {};
-    return {
-        /**
-         * 注册一个视图
-         * @param viewName
-         * @param presenterName
-         * @param obj
-         */
-        register: function (viewName, presenterName, obj) {
-            var view = Util.extend(obj, new BaseView(viewName, presenterName));
-            viewMap[viewName] = view;
-            console.log(view);
-
-            view.listen();
-        },
-        /**
-         * 注销一个视图
-         * @param viewName
-         */
-        cancel: function (viewName) {
-            delete viewMap[viewName];
-        },
-        /**
-         * 触发视图的指定渲染Handle
-         * @param viewName
-         * @param renderName
-         * @param data
-         */
-        trigger: function (viewName, renderName, data) {
-            viewMap[viewName]['render'][renderName].apply(viewMap[viewName], data || []);
-        }
-    }
-})();
 
 View.register('VQueue', 'PQueue', (function () {
 
@@ -64,33 +15,22 @@ View.register('VQueue', 'PQueue', (function () {
                     outDOM: Util.$("#right-out")
                 }
             },
+            search:{
+              input: Util.$("#search-text"),
+                btn: Util.$("#search-btn")
+            },
             ElementClassName: 'queue-el'
         },
         /**
          * 创建DOM;
-         * @param number
-         * @returns {Element}
+         * @param value
+         * @returns String
          */
-        createDOM = function (number) {
-            var div = document.createElement('div'),
-                text = document.createTextNode(number),
-                attr = document.createAttribute('class');
-            attr.nodeValue = setting.ElementClassName;
-            div.appendChild(text);
-            div.setAttributeNode(attr);
+        createDOM = function (value) {
+            var div = "<div style class>text</div>";
+            div = div.replace('class', 'class="'+setting.ElementClassName + '"');
+            div = div.replace('text', value);
             return div;
-        },
-        /**
-         * 表单验证
-         */
-        formValidator = function () {
-            var value = setting.input.value;
-            if (!/[0-9]+/g.test(value)) {
-                throw new Error('请输入一个数字!');
-            }
-            if (10 > value || value > 100) {
-                throw new Error('输入的数字必须在10至100之间');
-            }
         },
         /**
          * 返回最后指定方向上的最后一个元素
@@ -112,6 +52,7 @@ View.register('VQueue', 'PQueue', (function () {
         listen: function () {
             var selfView = this;
             var btns = setting.btns;
+            var searchGroup = setting.search;
             var wrap = setting.wrap;
             var presenterName = selfView.presenterName;
 
@@ -119,32 +60,22 @@ View.register('VQueue', 'PQueue', (function () {
              * 左侧操作监听
              */
             Util.addDOMEvent(btns.left.inDOM, 'click', function () {
-                try {
-                    formValidator();
-                } catch (err) {
-                    View.trigger(selfView.name, 'error', [err]);
-                    return;
-                }
                 Presenter.notify(presenterName, 'in', ['left', setting.input.value])
             });
             Util.addDOMEvent(btns.left.outDOM, 'click', function () {
                 Presenter.notify(presenterName, 'out', ['left', setting.input.value])
             });
+
             /**
              * 右侧操作监听
              */
             Util.addDOMEvent(btns.right.inDOM, 'click', function () {
-                try {
-                    formValidator();
-                } catch (err) {
-                    View.trigger(selfView.name, 'error', [err]);
-                    return;
-                }
                 Presenter.notify(presenterName, 'in', ['right', setting.input.value])
             });
             Util.addDOMEvent(btns.right.outDOM, 'click', function () {
                 Presenter.notify(presenterName, 'out', ['right', setting.input.value])
             });
+
             /**
              * 指定元素弹出监听
              */
@@ -154,16 +85,25 @@ View.register('VQueue', 'PQueue', (function () {
                 var id = getDOMIndex(originEl);
                 Presenter.notify(presenterName, 'outById', [id])
             });
+
+            /**
+             * 查询
+             */
+            Util.addDOMEvent(searchGroup.btn, 'click', function () {
+                Presenter.notify(presenterName, 'search', [searchGroup.input.value]);
+            })
         },
         render: {
-            'in': function (direct, number) {
+            'in': function (direct, inputArr) {
                 var wrap = setting.wrap;
-                var lastNode = getQueryLastChild(direct);
-                var newEl = createDOM(number);
+                var newEls = '';
+                inputArr.forEach(function (value) {
+                    newEls += createDOM(value);
+                });
                 if (direct === 'left') {
-                    wrap.insertBefore(newEl, lastNode);
+                    wrap.innerHTML = newEls + wrap.innerHTML;
                 } else {
-                    wrap.appendChild(newEl);
+                    wrap.innerHTML += newEls;
                 }
             },
             'out': function (direct, number) {
@@ -176,6 +116,14 @@ View.register('VQueue', 'PQueue', (function () {
                 var wrap = setting.wrap;
                 wrap.removeChild(wrap.childNodes[id]);
                 alert(number);
+            },
+            'searchResult': function (result) {
+                var wrap = setting.wrap,
+                    content = '';
+                result.forEach(function (val) {
+                    content += createDOM(val);
+                });
+                wrap.innerHTML = content;
             },
             'error': function (err) {
                 alert(err.message);

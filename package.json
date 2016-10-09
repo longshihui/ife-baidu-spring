@@ -22,7 +22,9 @@
   },
   "homepage": "https://github.com/longshihui/ife-baidu-spring#readme",
   "devDependencies": {
+    "babel-preset-es2015": "^6.16.0",
     "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
     "gulp-sass": "^2.3.2"
   }
 }

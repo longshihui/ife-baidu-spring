@@ -47,3 +47,94 @@ var Util = {
         }
     }
 };
+
+/**
+ * 视图管理类
+ * @type {{register, cancel, getView}}
+ */
+var View = (function () {
+    /**
+     * 视图基类
+     * @param viewName
+     * @param presenterName
+     * @constructor
+     */
+    function BaseView(viewName, presenterName) {
+        this.name = viewName;
+        this.presenterName = presenterName;
+    }
+
+    var viewMap = {};
+    return {
+        /**
+         * 注册一个视图
+         * @param viewName
+         * @param presenterName
+         * @param obj
+         */
+        register: function (viewName, presenterName, obj) {
+            var view = Util.extend(obj, new BaseView(viewName, presenterName));
+            viewMap[viewName] = view;
+            console.log(view);
+
+            view.listen();
+        },
+        /**
+         * 注销一个视图
+         * @param viewName
+         */
+        cancel: function (viewName) {
+            delete viewMap[viewName];
+        },
+        /**
+         * 触发视图的指定渲染Handle
+         * @param viewName
+         * @param renderName
+         * @param data
+         */
+        trigger: function (viewName, renderName, data) {
+            viewMap[viewName]['render'][renderName].apply(viewMap[viewName], data || []);
+        }
+    }
+})();
+
+/**
+ * 中转者
+ * @type {{register, cancel}}
+ */
+var Presenter = (function () {
+    var presenterMap = {};
+    return {
+        /**
+         * 注册一个中转者
+         * @param presenterName
+         * @param viewName
+         * @param model
+         * @param routers
+         */
+        register: function (presenterName, viewName, model, routers) {
+            presenterMap[presenterName] = {
+                model: model,
+                viewName: viewName,
+                router: routers
+            }
+        },
+        /**
+         * 注销一个中转者
+         * @param presenterName
+         */
+        cancel: function (presenterName) {
+            delete presenterMap[presenterName];
+        },
+        /**
+         * 通知一个中转者
+         * @param presenterName
+         * @param routerName
+         * @param data
+         */
+        notify: function (presenterName, routerName, data) {
+            presenterMap[presenterName]['router'][routerName].apply(presenterMap[presenterName], data || []);
+        }
+    }
+})();
+
