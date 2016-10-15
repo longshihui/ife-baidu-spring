@@ -3,12 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <title>任务二十一</title>
-
+    <link rel="stylesheet" href="../../css/normalize.css">
+    <link rel="stylesheet" href="../../css/task-21/tag.css">
 </head>
 <body>
+<div class="tag-wrapper">
+    <label>
+        <span>Tag:</span>
+        <input type="text" class="tag-entry tag-input">
+    </label>
+    <button class="tag-submit">提交</button>
+    <ul class="tag-list"></ul>
+</div>
+<div class="tag-wrapper">
+    <label>
+        <span>Tag:</span>
+        <input type="text" class="tag-entry tag-input">
+    </label>
+    <ul class="tag-list"></ul>
+</div>
+<div class="tag-wrapper">
+    <label>
+        <textarea type="text" class="tag-entry" rows="12" cols="20"></textarea>
+    </label>
+    <button class="tag-submit">提交</button>
+    <ul class="tag-list"></ul>
+</div>
+<script type="text/javascript" src="../2-20/Common.js"></script>
+<script type="text/javascript" src="common-extend.js"></script>
+<script type="text/javascript" src="tags.js"></script>
+<script type="text/javascript">
+    var tag = new Tags({
+        wrapper: Util.$('.tag-wrapper')[0]
+    });
+    tag.init();
 
+    var tag2 = new Tags({
+        wrapper: Util.$('.tag-wrapper')[1]
+    });
+
+    tag2.init();
+
+    var tag3 = new Tags({
+        wrapper: Util.$('.tag-wrapper')[2],
+        separator: /[^0-9a-zA-Z\u4E00-\u9FFF]+/g
+    });
+    tag3.init();
+</script>
 </body>
-<script src="../2-20/Common.js"></script>
-<script src="../2-20/Model.js"></script>
-<script src="tags.js"></script>
+
 </html>

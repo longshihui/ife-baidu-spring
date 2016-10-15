@@ -1,0 +1,46 @@
+@keyframes slideIn {
+  from{
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.tag-wrapper {
+  padding: 20px;
+  .tag-entry {
+
+  }
+  .tag-submit {
+  }
+  .tag-list {
+    margin: 10px 0;
+    padding: 0;
+    list-style: none;
+    &:after {
+      content: '';
+      visibility: hidden;
+      display: block;
+      height: 0;
+      clear: both;
+    }
+  }
+  .tag-item {
+    float: left;
+    margin-right: 3px;
+    border: 1px solid #cccccc;
+    padding: .3em .5em;
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover .tag-delete{
+      display: inline-block;
+    }
+    .tag-delete {
+      display: none;
+      text-decoration: none;
+      animation: slideIn .5s;
+    }
+  }
+}
