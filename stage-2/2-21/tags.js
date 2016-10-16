@@ -1,6 +1,5 @@
 (function (win, Util) {
     'use strict';
-
     var ENTRY_SELECTOR = '.tag-entry';
 
     var SUBMIT_SELECTOR = '.tag-submit';
