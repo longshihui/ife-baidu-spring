@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task-26</title>
+</head>
+<body>
+<script type="text/javascript" src="../../js/common/jquery-1.12.2.js"></script>
+<script type="text/javascript" src="Common/Common.js"></script>
+<!--抽象类-->
+<script type="text/javascript" src="Common/Interface.js"></script>
+<script type="text/javascript" src="Other/Star.js"></script>
+<script type="text/javascript" src="System/PowerSystem.js"></script>
+<script type="text/javascript" src="System/DriveSystem.js"></script>
+<script type="text/javascript" src="System/MessageSystem.js"></script>
+<script type="text/javascript" src="Other/Mediator.js"></script>
+<!--实现类-->
+<script type="text/javascript" src="CommunicationArea.js"></script>
+<script type="text/javascript" src="SUNPowerSystem.js"></script>
+<script type="text/javascript" src="BaseDriveSystem.js"></script>
+<script type="text/javascript" src="Universe.js"></script>
+<script type="text/javascript" src="Spaceship.js"></script>
+<script type="text/javascript" src="Commander.js"></script>
+<script>
+    /**
+     * Main
+     */
+    $(function () {
+        var area = new CommunicationArea();
+        var s1 = new Spaceship();
+        var s2 = new Spaceship();
+        var c = new Commander();
+        s1.init({
+            powerSystem: new SUNPowerSystem(),
+            driveSystem: new BaseDriveSystem(),
+            messageSystem: new MessageSystem(Mediator),
+            communicationArea: area,
+            canvas: null
+        });
+        s2.init({
+            powerSystem: new SUNPowerSystem(),
+            driveSystem: new BaseDriveSystem(),
+            messageSystem: new MessageSystem(Mediator),
+            communicationArea: area,
+            canvas: null
+        });
+        c.ready(new MessageSystem(Mediator), area);
+        c.sendCommand('hello world');
+    });
+</script>
+</body>
+
+</html>
